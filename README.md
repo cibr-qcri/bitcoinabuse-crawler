@@ -1,4 +1,4 @@
-# DarkWebCrawler
+# BitcoinAbuse Crawler
 A basic scrapper made in python with [scrapy framework](https://scrapy.org/) to -
 * Scrape reports from bitcoinabuse.com.
 * Push the output to ElasticSearch.

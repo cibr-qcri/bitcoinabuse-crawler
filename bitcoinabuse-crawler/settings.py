@@ -19,7 +19,7 @@ DEPTH_PRIORITY = 1
 SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
 SCHEDULER_MEMORY_QUEUE = 'scrapy.squeues.FifoMemoryQueue'
 
-LOG_LEVEL = "ERROR"
+LOG_LEVEL = "INFO"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'bitcoinabuse (+http://www.yourdomain.com)'
 
@@ -71,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'bitcoinabuse-crawler.pipelines.ElasticSearchPipeline': 300,
-    'bitcoinabuse-crawler.pipelines.FileWriterPipeline': 290
+    'bitcoinabuse-crawler.pipelines.FileWriterPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

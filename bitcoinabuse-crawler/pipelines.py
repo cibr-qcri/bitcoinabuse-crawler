@@ -73,6 +73,7 @@ class FileWriterPipeline(object):
 
     def process_item(self, item, spider):
         uid = item["address"] + item["abuse_type"] + item["abuser"] + item["description"]
+        uid = sha256(uid.encode("utf-8")).hexdigest()
         with open("/mnt/data/{id}".format(id=uid), "w") as f:
             f.write(item["response"])
 

@@ -56,10 +56,10 @@ class BitcoinAbuseCrawler(scrapy.Spider):
 
             if "is_landing" not in response.meta:
                 record_count -= (self.report_count[address] * 4)
-                self.report_count[address] += (record_count / 4)
+                self.report_count[address] += (record_count // 4)
             for i in range(0, record_count, 4):
                 input_date = datetime.strptime(records[i].text.strip(), "%b %d, %Y").date()
-                timestamp = datetime.combine(input_date, datetime.min.time()).timestamp() * 1000
+                timestamp = int(datetime.combine(input_date, datetime.min.time()).timestamp() * 1000)
 
                 item = BitcoinabuseItem()
                 item['timestamp'] = timestamp

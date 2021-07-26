@@ -12,8 +12,8 @@ import os
 
 BOT_NAME = 'bitcoinabuse'
 
-SPIDER_MODULES = ['bitcoinabuse.spiders']
-NEWSPIDER_MODULE = 'bitcoinabuse.spiders'
+SPIDER_MODULES = ['bitcoinabuse-crawler.spiders']
+NEWSPIDER_MODULE = 'bitcoinabuse-crawler.spiders'
 
 DEPTH_PRIORITY = 1
 SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
@@ -70,8 +70,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'bitcoinabuse.pipelines.ElasticSearchPipeline': 300,
-    'bitcoinabuse.pipelines.FileWriterPipeline': 290
+    'bitcoinabuse-crawler.pipelines.ElasticSearchPipeline': 300,
+    'bitcoinabuse-crawler.FileWriterPipeline': 290
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

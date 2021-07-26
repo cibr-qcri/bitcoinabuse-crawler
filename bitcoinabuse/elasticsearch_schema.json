@@ -1,0 +1,176 @@
+{
+  "mappings": {
+    "properties": {
+      "timestamp": {
+        "type": "date"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "method": {
+        "type": "keyword"
+      },
+      "info": {
+        "type": "nested",
+        "properties": {
+          "domain": {
+            "type": "keyword"
+          },
+          "url": {
+            "type": "keyword"
+          },
+          "title": {
+            "type": "keyword"
+          },
+          "external_urls": {
+            "type": "nested",
+            "properties": {
+              "web": {
+                "type": "keyword"
+              },
+              "tor": {
+                "type": "keyword"
+              }
+            }
+          },
+          "tags": {
+            "type": "nested",
+            "properties": {
+              "cryptocurrency": {
+                "type": "nested",
+                "properties": {
+                  "address": {
+                    "type": "nested",
+                    "properties": {
+                      "btc": {
+                        "type": "keyword"
+                      }
+                    }
+                  }
+                }
+              },
+              "wallet": {
+                "type": "nested",
+                "properties": {
+                  "name": {
+                    "type": "keyword"
+                  },
+                  "service_type": {
+                    "type": "keyword"
+                  },
+                  "url": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "abuse": {
+                "type": "nested",
+                "properties": {
+                  "address": {
+                    "type": "keyword"
+                  },
+                  "report": {
+                    "type": "nested",
+                    "properties": {
+                      "timestamp": {
+                        "type": "date"
+                      },
+                      "abuser": {
+                        "type": "keyword"
+                      },
+                      "description": {
+                        "type": "text"
+                      },
+                      "type": {
+                        "type": "keyword"
+                      }
+                    }
+                  }
+                }
+              },
+              "profile": {
+                "type": "nested",
+                "properties": {
+                  "name": {
+                    "type": "keyword"
+                  },
+                  "custom_title": {
+                    "type": "keyword"
+                  },
+                  "posts": {
+                    "type": "integer"
+                  },
+                  "activity": {
+                    "type": "integer"
+                  },
+                  "merit": {
+                    "type": "integer"
+                  },
+                  "position": {
+                    "type": "keyword"
+                  },
+                  "date_registered": {
+                    "format": "yyyy-MM-dd HH:mm:ss",
+                    "type": "date"
+                  },
+                  "last_active": {
+                    "format": "yyyy-MM-dd HH:mm:ss",
+                    "type": "date"
+                  },
+                  "icq": {
+                    "type": "keyword"
+                  },
+                  "aim": {
+                    "type": "keyword"
+                  },
+                  "msn": {
+                    "type": "keyword"
+                  },
+                  "yim": {
+                    "type": "keyword"
+                  },
+                  "email": {
+                    "type": "keyword"
+                  },
+                  "website": {
+                    "type": "keyword"
+                  },
+                  "link": {
+                    "type": "keyword"
+                  },
+                  "skype": {
+                    "type": "keyword"
+                  },
+                  "bitcoin_address": {
+                    "type": "keyword"
+                  },
+                  "other_info": {
+                    "type": "keyword"
+                  },
+                  "gender": {
+                    "type": "keyword"
+                  },
+                  "age": {
+                    "type": "integer"
+                  },
+                  "location": {
+                    "type": "keyword"
+                  },
+                  "signature": {
+                    "type": "keyword"
+                  },
+                  "profile_photo": {
+                    "type": "keyword"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

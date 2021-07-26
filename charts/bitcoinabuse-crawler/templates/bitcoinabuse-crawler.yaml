@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitcoinabuse-crawler-deployment
+  labels:
+    app: bitcoinabuse-crawler
+    tier: crawler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitcoinabuse-crawler
+      tier: crawler
+  template:
+    metadata:
+      labels:
+        app: bitcoinabuse-crawler
+        tier: crawler
+    spec:
+      containers:
+        - name: bitcoinabuse-crawler
+          image: "{{ .Values.bitcoinabuse.image.name }}:{{ .Values.bitcoinabuse.image.tag }}"
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: bitcoinabuse-crawler
+              mountPath: /mnt/data
+          {{- if .Values.elasticsearch_ip }}
+          env:
+            - name: elasticsearchIP
+              value: {{ .Values.elasticsearch_ip }}
+          {{- end }}
+      volumes:
+        - name: bitcoinabuse-crawler
+          persistentVolumeClaim:
+            claimName: bitcoinabuse-crawler-pv-claim
